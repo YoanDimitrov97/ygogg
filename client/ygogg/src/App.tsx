@@ -6,7 +6,9 @@ function App() {
     name: string;
   };
   const [data, setData] = useState<Card[]>([]);
+  const [currentCard, setCurrentCard] = useState<Card>();
   const [loading, setLoading] = useState(true); // Loading state
+  const [showCardFullscreen, setShowCardFullscreen] = useState(false); // Loading state
   const API_URL = "https://sheetdb.io/api/v1/8x87dvviqlcq8?sheet=Custom Format";
 
   useEffect(() => {
@@ -24,6 +26,11 @@ function App() {
     fetchData();
   }, []);
   console.log(data);
+
+  const toggleShowCard = (card:Card) => {
+    setShowCardFullscreen(!showCardFullscreen);
+    setCurrentCard(card)
+  }
   return (
     <>
       <h1>OC Format</h1>
@@ -33,13 +40,21 @@ function App() {
           <div className="allFormatCardsHolder">
             {data.map((card) => (
               <img
+              className="smallCardImage"
                 loading="lazy"
                 key={card.id}
                 src={`https://images.ygoprodeck.com/images/cards_small/${card.id}.jpg`}
                 alt={card.name}
+                onClick={() => toggleShowCard(card)}
               />
             ))}
           </div>
+
+          {showCardFullscreen && (<div className="showFullCardHolder">
+            <div className="mask" onClick={() => setShowCardFullscreen(false)}></div>
+            <img className="selectedCard" loading="lazy" src={`https://images.ygoprodeck.com/images/cards/${currentCard.id}.jpg`} alt={currentCard?.name || ""} />
+          </div>)}
+
         </>
       )}
     </>
