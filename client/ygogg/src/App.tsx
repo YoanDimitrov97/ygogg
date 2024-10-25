@@ -52,7 +52,7 @@ function App() {
 
           {showCardFullscreen && (<div className="showFullCardHolder">
             <div className="mask" onClick={() => setShowCardFullscreen(false)}></div>
-            <img className="selectedCard" loading="lazy" src={`https://images.ygoprodeck.com/images/cards/${currentCard.id}.jpg`} alt={currentCard?.name || ""} />
+            <img className="selectedCard" loading="lazy" src={`https://images.ygoprodeck.com/images/cards/${currentCard?.id}.jpg`} alt={currentCard?.name || ""} />
           </div>)}
 
         </>
