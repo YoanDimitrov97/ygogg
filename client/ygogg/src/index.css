@@ -16,8 +16,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start; /* Aligns cards in the center horizontally */
-  gap: 10px; /* Space between cards */
-  padding: 10px; /* Optional padding for the container */
+  gap: 8px; /* Space between cards */
+  padding: 6px; /* Optional padding for the container */
   overflow-x: hidden; /* Prevents horizontal scrolling */
   height: calc(100vh - 196px + 28px);
   -ms-overflow-style: none;  /* IE and Edge */
@@ -67,8 +67,8 @@ h1, h3 {
 
 @media (max-width: 430px) {
   .smallCardImage {
-    width:115px;
-    height:168px;
+    width:109px;
+    height:161px;
   }
   .selectedCard {
     --selectedCardWidth:356px;
