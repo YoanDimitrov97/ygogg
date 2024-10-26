@@ -20,6 +20,11 @@
   padding: 10px; /* Optional padding for the container */
   overflow-x: hidden; /* Prevents horizontal scrolling */
   height: calc(100vh - 196px + 28px);
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.allFormatCardsHolder::-webkit-scrollbar {
+  display: none;
 }
 h1, h3 {
   padding-left:10px;
